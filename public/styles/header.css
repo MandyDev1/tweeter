@@ -1,0 +1,20 @@
+.head {
+  background-color: #e0facf;
+  background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 9em;
+}
+
+.profile-picture {
+  zoom: 78%;
+}
+
+.username {
+  margin-top: 1px;
+  color: white;
+  font-weight: 600;
+}
