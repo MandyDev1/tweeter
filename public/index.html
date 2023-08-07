@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="styles/tweet-history.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -69,8 +70,29 @@
     </section>
 
     <!-- Individual Tweets -->
-    <section id="tweets-container"></section>
-    
+    <section id="tweets-container">
+      <article class="tweet-history">
+        <header class="tweet-header">
+          <div class="profile-picture">
+            <img class="avatar" src="/images/profile-hex.png" alt="avatar">
+            <div class="username">Mandy</div>
+          </div>
+          <div class="mention">@Ludi</div>
+        </header>
+        <div class="tweet-content">
+          Nice to have my first tweet here!
+        </div>
+        <footer class="tweet-footer">
+          <div class="tweet-timestamp">10 days ago</div>
+          <div class="icons">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    </section>
+
   </main>
 </body>
 

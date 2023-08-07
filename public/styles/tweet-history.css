@@ -1,0 +1,81 @@
+#tweets-container {
+  width: 100%;
+  margin-bottom: 400px;
+}
+
+.tweet-history {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid rgb(84, 81, 73);
+}
+
+.tweet-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  margin-top: 5px;
+  font-size: 21px;
+}
+
+.profile-picture {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 100px;
+  height: auto;
+}
+
+.profile-picture .username {
+  font-family: 'Source Sans 3', sans-serif;
+  color: rgb(84, 81, 73);
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.mention {
+  color: rgb(181, 181, 181);
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.tweet-content {
+  margin-top: 30px;
+  width: 97%;
+  height: 50px;
+  font-size: 21px;
+  font-weight: 600;
+  border-bottom: 3px solid rgb(84, 81, 73);
+  text-indent: 18px;
+}
+
+.tweet-footer {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8em;
+}
+
+.tweet-timestamp {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tweet-footer .icons i {
+  font-size: 15px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.tweet-footer .icons i:hover {
+  color: #a0fbbb;
+}
