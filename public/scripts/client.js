@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function() {
+  // Prevent XSS with an escape function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   // Taking in an array of tweet objects and then appending each one to the #tweets-container
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
@@ -26,7 +33,7 @@ $(document).ready(function() {
           <div class="mention">${tweet.user.handle}</div>
         </header>
         <div class="tweet-content">
-          ${tweet.content.text}
+          ${escape(tweet.content.text)}
         </div>
         <footer class="tweet-footer">
           <div class="tweet-timestamp">${timeago.format(tweet.created_at)}</div>
