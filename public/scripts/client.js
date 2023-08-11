@@ -49,9 +49,20 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // Adds new tweet when click submit
+  // 'Submit' event handler
   $("#new-tweet-form").submit(function(event) {
     event.preventDefault();
+
+    const tweetContent = $(this).find('textarea[name="text"]').val();
+
+    if (!tweetContent || tweetContent.length > 140) {
+      if (!tweetContent) {
+        alert("Please enter something before you tweet.");
+      } else {
+        alert("The maximum message length is 140 characters!");
+      }
+      return;
+    }
 
     const newTweet = $(this).serialize();
     console.log('Serialized Form Data:', newTweet);
