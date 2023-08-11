@@ -28,10 +28,13 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -70,28 +73,7 @@
     </section>
 
     <!-- Individual Tweets -->
-    <section id="tweets-container">
-      <article class="tweet-history">
-        <header class="tweet-header">
-          <div class="profile-picture">
-            <img class="avatar" src="/images/profile-hex.png" alt="avatar">
-            <div class="username">Mandy</div>
-          </div>
-          <div class="mention">@Ludi</div>
-        </header>
-        <div class="tweet-content">
-          Nice to have my first tweet here!
-        </div>
-        <footer class="tweet-footer">
-          <div class="tweet-timestamp">10 days ago</div>
-          <div class="icons">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-    </section>
+    <section id="tweets-container"></section>
 
   </main>
 </body>
