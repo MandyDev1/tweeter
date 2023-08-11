@@ -7,9 +7,10 @@
 $(document).ready(function() {
   // Taking in an array of tweet objects and then appending each one to the #tweets-container
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet);
+      $('#tweets-container').append($tweet);
     }
   }
 
@@ -43,7 +44,7 @@ $(document).ready(function() {
   // Responsable for fetching tweets from http://localhost:8080/tweets page
   const loadTweets = function () {
     $.get("/tweets", function (newTweet) {
-      renderTweets(newTweet);
+      renderTweets(newTweet.reverse()); // newest tweet on top
     });
   };
 
