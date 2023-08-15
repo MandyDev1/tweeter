@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   border: 3px solid rgb(84, 81, 73);
+  margin-bottom: 1.8em;
 }
 
 .tweet-header {
@@ -71,7 +72,7 @@
 }
 
 .tweet-footer .icons i {
-  font-size: 15px;
+  font-size: 13px;
   transition: color 0.3s;
   cursor: pointer;
 }

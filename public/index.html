@@ -60,6 +60,20 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
+    <!-- Error Messages -->
+    <section id="error">
+      <span id="error-empty" class="errorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        Please enter something before you Tweet! 😅
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+      <span id="error-tooLong" class="errorMessage">
+        <i class="fas fa-exclamation-triangle"></i>
+        The maximum message length is 140 characters! 🤓
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+    </section>
+
     <!-- Submit A New Tweet -->
     <section class="new-tweet">
       <form class="form" id="new-tweet-form" action="/tweets/" method="POST">

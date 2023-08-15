@@ -4,16 +4,20 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
+  // Error messages are hidden by default
+  $("#error-empty").hide();
+  $("#error-tooLong").hide();
+
   // Prevent XSS with an escape function
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
+
   // Taking in an array of tweet objects and then appending each one to the #tweets-container
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     $('#tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -22,7 +26,7 @@ $(document).ready(function() {
   }
 
   // Returning a tweet <article> element containing the entire HTML structure of the tweet
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     let $tweet = $(`
     <article class="tweet-history">
         <header class="tweet-header">
@@ -57,28 +61,27 @@ $(document).ready(function() {
 
   loadTweets();
 
-  // 'Submit' event handler
-  $("#new-tweet-form").submit(function(event) {
+  // Adds new tweet when click submit
+  $("#new-tweet-form").submit(function (event) {
     event.preventDefault();
+    const maxCharacter = 140;
+    const tweetLength = $(this).find("#tweet-text").val().length;
 
-    const tweetContent = $(this).find('textarea[name="text"]').val();
-
-    if (!tweetContent || tweetContent.length > 140) {
-      if (!tweetContent) {
-        alert("Please enter something before you tweet.");
-      } else {
-        alert("The maximum message length is 140 characters!");
-      }
-      return;
+    if (!tweetLength) {
+      $("#error-empty").slideDown("slow");
+      $("#error-tooLong").hide();
+    } else if (tweetLength - maxCharacter > 0) {
+      $("#error-tooLong").slideDown("slow");
+      $("#error-empty").hide();
+    } else {
+      $("#error-empty").hide();
+      $("#error-tooLong").hide();
+      const newTweet = $(this).serialize();
+      $.post("/tweets/", newTweet, () => {
+        $(this).find("textarea").val("");
+        $(this).find(".counter").val(maxCharacter);
+        loadTweets();
+      });
     }
-
-    const newTweet = $(this).serialize();
-    console.log('Serialized Form Data:', newTweet);
-
-    $.post('/tweets', newTweet).then(function(response) {
-      console.log(response);
-      loadTweets();
-    });
-  })
-
+  });
 })
