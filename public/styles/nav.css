@@ -29,3 +29,15 @@
 .fa-angle-double-down {
   color: red;
 }
+
+@media only screen and (max-width: 1023px) {
+  .nav-bar {
+    background-color: #e0facf;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+  }
+
+  .nav-bar .write {
+    background-color: #e0facf;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+  }
+}

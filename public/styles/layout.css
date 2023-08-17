@@ -33,3 +33,27 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  #content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #error {
+    position: absolute;
+    top: 140px;
+  }
+
+  .new-tweet {
+    margin-top: 200px;
+  }
+
+  .profile-picture {
+    margin-bottom: 200px;
+  }
+
+  .container {
+    margin-right: 50px;
+  }
+}

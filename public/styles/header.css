@@ -1,4 +1,5 @@
 .head {
+  height: auto;
   background-color: #e0facf;
   background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
   display: flex;
@@ -6,15 +7,51 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  padding-top: 9em;
+  padding-top: 6em;
 }
 
 .profile-picture {
-  zoom: 78%;
+  display: flex;
+  justify-content: center;
+  zoom: 80%;
+  margin-bottom: 1rem;
 }
 
 .username {
   margin-top: 1px;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
+  font-family: 'Source Sans 3', sans-serif;
+  margin-block-end: 0em;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .head {
+    height: auto;
+    background-color: #e0facf;
+    background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 6em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .head {
+    margin-top: 230px;
+    display: flex;
+    width: 60%;
+    margin-bottom: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 60px;
+    margin-right: 120px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
 }
