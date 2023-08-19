@@ -83,3 +83,26 @@
 .tweet-footer .icons i:hover {
   color: #a0fbbb;
 }
+
+article:hover {
+  box-shadow: 4px 7px 10px rgba(97, 244, 193, 0.5); 
+}
+
+article:hover .tweet-content {
+  color: rgb(84, 81, 73);
+}
+
+article:hover .tweet-footer{
+  color: rgb(84, 81, 73);
+}
+
+.tweet-history {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.tweet-content {
+  flex: 1;
+  word-wrap: break-word;
+}
