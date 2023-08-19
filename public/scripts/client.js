@@ -82,11 +82,14 @@ $(document).ready(function () {
       $("#error-empty").hide();
       $("#error-tooLong").hide();
       const newTweet = $(this).serialize();
+      const $textarea = $(this).find("textarea");
+      const $counter = $(this).find(".counter");
+
       $.post("/tweets/", newTweet)
         .done(function () {
           // Successful Post
-          $(this).find("textarea").val("");
-          $(this).find(".counter").val(maxCharacter);
+          $textarea.val("");
+          $counter.val(maxCharacter);
           loadTweets();
         })
         .fail(function (error) {
