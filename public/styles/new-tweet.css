@@ -40,14 +40,16 @@ textarea {
 
 .new-tweet button {
   margin-top: 15px;
-  background-color: #4056A1;
+  background-color: #83f29d;
   color: #FFFFFF;
   font-family: 'Bungee';
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
-  font-size: 18px;
+  font-size: 22px;
+  border: #83f29d;
+  border-radius: 0.3cm;
 }
 
 .counter {

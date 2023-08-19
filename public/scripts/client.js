@@ -54,9 +54,13 @@ $(document).ready(function () {
 
   // Responsable for fetching tweets from http://localhost:8080/tweets page
   const loadTweets = function () {
-    $.get("/tweets", function (newTweet) {
-      renderTweets(newTweet.reverse()); // newest tweet on top
-    });
+    $.get("/tweets")
+      .done(function (newTweet) {
+        renderTweets(newTweet.reverse()); // newest tweet on top
+      })
+      .fail(function (error) {
+        console.error("GET request failed:", error); // Get request error handling
+      });
   };
 
   loadTweets();
@@ -65,7 +69,8 @@ $(document).ready(function () {
   $("#new-tweet-form").submit(function (event) {
     event.preventDefault();
     const maxCharacter = 140;
-    const tweetLength = $(this).find("#tweet-text").val().length;
+    const tweetText = $(this).find("#tweet-text").val().trim();
+    const tweetLength = tweetText.length;
 
     if (!tweetLength) {
       $("#error-empty").slideDown("slow");
@@ -77,11 +82,16 @@ $(document).ready(function () {
       $("#error-empty").hide();
       $("#error-tooLong").hide();
       const newTweet = $(this).serialize();
-      $.post("/tweets/", newTweet, () => {
-        $(this).find("textarea").val("");
-        $(this).find(".counter").val(maxCharacter);
-        loadTweets();
-      });
+      $.post("/tweets/", newTweet)
+        .done(function () {
+          // Successful Post
+          $(this).find("textarea").val("");
+          $(this).find(".counter").val(maxCharacter);
+          loadTweets();
+        })
+        .fail(function (error) {
+          console.error("POST request failed:", error);
+        });
     }
   });
 })
