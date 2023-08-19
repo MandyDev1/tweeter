@@ -3,15 +3,6 @@
   margin-bottom: 400px;
 }
 
-.tweet-history {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 3px solid rgb(84, 81, 73);
-  margin-bottom: 1.8em;
-}
-
 .tweet-header {
   width: 100%;
   display: flex;
@@ -50,25 +41,6 @@
   padding-bottom: 25px;
 }
 
-.tweet-content {
-  margin-top: 30px;
-  width: 97%;
-  height: 30px;
-  font-size: 21px;
-  font-weight: 600;
-  border-bottom: 3px solid rgb(84, 81, 73);
-  text-indent: 18px;
-}
-
-.tweet-footer {
-  width: 94%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 1.8em;
-}
-
 .tweet-timestamp {
   font-size: 16px;
   font-weight: 600;
@@ -97,12 +69,31 @@ article:hover .tweet-footer{
 }
 
 .tweet-history {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  border: 3px solid rgb(84, 81, 73);
+  margin-bottom: 1.8em;
 }
 
 .tweet-content {
   flex: 1;
   word-wrap: break-word;
+  margin-top: 30px;
+  width: 97%;
+  height: 30px;
+  font-size: 21px;
+  font-weight: 600;
+  border-bottom: 3px solid rgb(84, 81, 73);
+  text-indent: 18px;
+}
+
+.tweet-footer {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8em;
 }
